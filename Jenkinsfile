@@ -4,7 +4,7 @@ def config=[release: false];
     
 try {
      config['release'] = Boolean.valueOf(release);
-
+     println release.getClass()
      if (release) {
          println "release $release";
      } else {

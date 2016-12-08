@@ -3,7 +3,7 @@
 def config=[release: false];
     
 try {
-     config['release'] = release == true;
+     config['release'] = Boolean.valueOf(release);
 
      if (release) {
          println "release $release";

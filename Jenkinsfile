@@ -1,5 +1,11 @@
 #!/usr/bin/env groovy
-     
+import nl.qiy.jenkins.GlobalLib;
+
+def config = [:]
+
+new GlobalLib(this, config, null);
+
+/*
 def config=[release: false];
     
 try {
@@ -16,3 +22,4 @@ try {
 
 
 println "release = ${config['release']}"
+*/

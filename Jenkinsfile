@@ -4,7 +4,7 @@ def config ;
 stage ("update config") {
     config = updateConfig({
         update = 'micro';
-    }):
+    });
 }
 stage("tag") {
     def ver = "frisotest";

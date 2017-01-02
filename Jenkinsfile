@@ -6,6 +6,9 @@ node {
             update = 'micro';
         });
     }
+    stage ("get clean source") {
+        getCleanGitSource(config);
+    }
     stage("tag") {
         def ver = "frisotest";
         sh "git tag -a '${ver}' -m 'Release tag by Jenkins'"

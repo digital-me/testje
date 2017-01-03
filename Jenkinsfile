@@ -4,8 +4,8 @@ node {
     stage ("update config") {
         config = updateConfig({
             update = 'micro';
-            branch = 'TESTERDETEST';
-            newVersion = 'versie';
+            branch = 'master';
+            newVersion = '0.0.1';
         });
     }
     stage ("get clean source") {

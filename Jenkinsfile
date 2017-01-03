@@ -4,19 +4,14 @@ node {
     stage ("update config") {
         config = updateConfig({
             update = 'micro';
+            branch = 'TESTERDETEST';
+            newVersion = 'versie';
         });
     }
     stage ("get clean source") {
         getCleanGitSource(config);
     }
     stage("tag") {
-        def ver = "frisotest";
-        sh "git remote -v"
-        // sh "git  remote set-url origin ssh://${config['giturl']}"
-        // sh "git remote -v"
-        sh "git tag -a '${ver}' -m 'Release tag by Jenkins'"
-        sshagent(['bot-ci-dgm-rsa']) { 
-            sh "git -c core.askpass=true push origin '${ver}'"  
-        }
+        tagGit(config);
     }
 }
